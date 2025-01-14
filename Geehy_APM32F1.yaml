@@ -239,6 +239,43 @@ series:
           link_script: none
           marco: []
           files: []
+    - chip_name: APM32F103CCT6
+      peripheral: {}
+      memory:
+      - id: IROM1
+        start: '0x08000000'
+        size: '0x00040000'
+        default: '1'
+      - id: IRAM1
+        start: '0x20000000'
+        size: '0x00010000'
+        init: '0'
+        default: '1'
+      cpu_info:
+        max_clock: '96000000'
+        fpu: '0'
+        mpu: '0'
+        endian: Little-endian
+      compiler:
+        gcc:
+          entry_point: entry
+          link_script: linkscripts\APM32F103xC\link.lds
+          marco:
+          - APM32F10X_HD
+          files:
+          - libraries\CMSIS\Device\Geehy\APM32F10x\Include\apm32f10x.h
+          - libraries\CMSIS\Lib\GCC
+          - libraries\CMSIS\Device\Geehy\APM32F10x\Source\gcc\startup_apm32f10x_hd.s
+        armcc:
+          entry_point: none
+          link_script: none
+          marco: []
+          files: []
+        iarcc:
+          entry_point: none
+          link_script: none
+          marco: []
+          files: []
     - chip_name: APM32F103RCT6
       peripheral: {}
       memory:
